@@ -1,6 +1,9 @@
 
 Neuro.live = (function()
 {
+  var OP_SAVE = 1;
+  var OP_REMOVE = 2;
+
   var cache = {};
 
   function get(url)
@@ -8,11 +11,14 @@ Neuro.live = (function()
     return url in cache ? cache[ url ] : ( cache[ url ] = new PubSub( url ) );
   }
 
-  function LiveFactory(database, onPublish)
+  function LiveFactory(database)
   {
     if ( !database.pubsub || !database.channel || !database.token )
     {
-      return function() {};
+      return { 
+        save: Neuro.noop, 
+        remove: Neuro.noop 
+      };
     }
 
     var pubsub = get( database.pubsub );
@@ -24,24 +30,50 @@ Neuro.live = (function()
     {
       if ( !Neuro.forceOffline )
       {
-        onPublish( message );
+        if ( message.op === OP_SAVE )
+        {
+          database.liveSave( message.key, message.model );
+        }
+        if ( message.op === OP_REMOVE )
+        {
+          database.liveRemove( message.key );
+        }
       }
     }
 
-    function publish(message)
-    {
-      if ( !Neuro.forceOffline )
-      {
-        channel.publish( message );
-      }
-    };
-
     channel.onpublish = handlePublish;
 
-    publish.pubsub = pubsub;
-    publish.channel = channel;
+    return {
 
-    return publish;
+      channel: channel,
+      pubsub: pubsub,
+
+      save: function(model, data)
+      {
+        if ( !Neuro.forceOffline )
+        {
+          channel.publish(
+          {
+            op: OP_SAVE,
+            key: model.$key(),
+            model: data
+          });
+        }
+      },
+
+      remove: function(model)
+      {
+        if ( !Neuro.forceOffline )
+        {
+          channel.publish(
+          {
+            op: OP_REMOVE,
+            key: model.$key()
+          });
+        }
+      }
+
+    };
   };
 
   return LiveFactory;
