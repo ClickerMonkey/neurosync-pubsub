@@ -1,8 +1,8 @@
-# neurosync-pubsub
+# rekord-pubsub
 
-A neurosync binding to pubsub - implementing Neuro.live.
+A rekord binding to pubsub - implementing Rekord.live.
 
-The easiest way to install is by using bower via `bower install neurosync-pubsub`.
+The easiest way to install is by using bower via `bower install rekord-pubsub`.
 
 **Dependencies**
 

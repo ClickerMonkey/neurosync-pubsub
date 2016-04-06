@@ -1,5 +1,5 @@
 
-Neuro.live = (function()
+Rekord.live = (function()
 {
   var OP_SAVE = 1;
   var OP_REMOVE = 2;
@@ -16,19 +16,19 @@ Neuro.live = (function()
     if ( !database.pubsub || !database.channel || !database.token )
     {
       return { 
-        save: Neuro.noop, 
-        remove: Neuro.noop 
+        save: Rekord.noop, 
+        remove: Rekord.noop 
       };
     }
 
     var pubsub = get( database.pubsub );
     var channel = pubsub.subscribe( database.channel, database.token );
 
-    Neuro.debug( Neuro.Debugs.PUBSUB_CREATED, pubsub );
+    Rekord.debug( Rekord.Debugs.PUBSUB_CREATED, pubsub );
 
     function handlePublish(message)
     {
-      if ( !Neuro.forceOffline )
+      if ( !Rekord.forceOffline )
       {
         if ( message.op === OP_SAVE )
         {
@@ -50,7 +50,7 @@ Neuro.live = (function()
 
       save: function(model, data)
       {
-        if ( !Neuro.forceOffline )
+        if ( !Rekord.forceOffline )
         {
           channel.publish(
           {
@@ -63,7 +63,7 @@ Neuro.live = (function()
 
       remove: function(model)
       {
-        if ( !Neuro.forceOffline )
+        if ( !Rekord.forceOffline )
         {
           channel.publish(
           {

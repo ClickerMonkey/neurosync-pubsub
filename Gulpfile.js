@@ -7,11 +7,11 @@ var gutil = require('gulp-util');
 var shell = require('gulp-shell');
 
 var build = {
-  filename: 'neurosync-pubsub.js',
-  minified: 'neurosync-pubsub.min.js',
+  filename: 'rekord-pubsub.js',
+  minified: 'rekord-pubsub.min.js',
   output: './build/',
   include: [
-    './src/neurosync-pubsub.js'
+    './src/rekord-pubsub.js'
   ]
 };
 

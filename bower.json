@@ -1,18 +1,18 @@
 {
-  "name": "neurosync-pubsub",
+  "name": "rekord-pubsub",
   "version": "1.0.0",
-  "homepage": "https://github.com/ClickerMonkey/neurosync-pubsub",
+  "homepage": "https://github.com/Rekord/rekord-pubsub",
   "authors": [
     "Philip Diffenderfer <pdiffenderfer@gmail.com>"
   ],
-  "description": "A neurosync binding to pubsub - implementing Neuro.live",
-  "main": "build/neurosync-pubsub.js",
+  "description": "A rekord binding to pubsub - implementing Rekord.live",
+  "main": "build/rekord-pubsub.js",
   "keywords": [
     "javascript",
     "orm",
     "offline",
     "realtime",
-    "neurosync",
+    "rekord",
     "pubsub",
     "socket.io"
   ],

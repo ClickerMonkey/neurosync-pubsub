@@ -1,12 +1,12 @@
 {
-  "name": "neurosync-pubsub",
+  "name": "rekord-pubsub",
   "version": "1.0.0",
-  "description": "A neurosync binding to pubsub - implementing Neuro.live",
+  "description": "A rekord binding to pubsub - implementing Rekord.live",
   "author": "Philip Diffenderfer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ClickerMonkey/neurosync-pubsub.git"
+    "url": "git://github.com/Rekord/rekord-pubsub.git"
   },
   "devDependencies": {
     "gulp": "^3.8.10",
