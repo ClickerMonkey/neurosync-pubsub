@@ -1,5 +1,5 @@
 
-Rekord.live = (function()
+Rekord.setLive((function()
 {
   var OP_SAVE = 1;
   var OP_REMOVE = 2;
@@ -15,9 +15,9 @@ Rekord.live = (function()
   {
     if ( !database.pubsub || !database.channel || !database.token )
     {
-      return { 
-        save: Rekord.noop, 
-        remove: Rekord.noop 
+      return {
+        save: Rekord.noop,
+        remove: Rekord.noop
       };
     }
 
@@ -78,4 +78,4 @@ Rekord.live = (function()
 
   return LiveFactory;
 
-})();
+})(), true );
