@@ -1,5 +1,4 @@
-
-Rekord.setLive((function()
+(function(global, Rekord, PubSub)
 {
   var OP_SAVE = 1;
   var OP_REMOVE = 2;
@@ -74,8 +73,8 @@ Rekord.setLive((function()
       }
 
     };
-  };
+  }
 
-  return LiveFactory;
+  Rekord.setLive( LiveFactory, true );
 
-})(), true );
+})( this, this.Rekord, this.PubSub );

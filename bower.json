@@ -1,6 +1,6 @@
 {
   "name": "rekord-pubsub",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/Rekord/rekord-pubsub",
   "authors": [
     "Philip Diffenderfer <pdiffenderfer@gmail.com>"
@@ -25,6 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "clickermonkey-pubsubjs": "*"
+    "clickermonkey-pubsubjs": "*",
+    "rekord": "^1.2.0"
   }
 }
