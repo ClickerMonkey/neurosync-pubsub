@@ -1,9 +1,10 @@
 {
   "name": "rekord-pubsub",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A rekord binding to pubsub - implementing Rekord.live",
   "author": "Philip Diffenderfer",
   "license": "MIT",
+  "main": "build/rekord-pubsub.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/Rekord/rekord-pubsub.git"

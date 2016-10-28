@@ -1,4 +1,4 @@
-/* rekord-pubsub 1.4.0 - A rekord binding to pubsub - implementing Rekord.live by Philip Diffenderfer */
+/* rekord-pubsub 1.4.1 - A rekord binding to pubsub - implementing Rekord.live by Philip Diffenderfer */
 (function(global, Rekord, PubSub)
 {
   var OP_SAVE = 1;
