@@ -1,5 +1,28 @@
-(function(global, Rekord, PubSub)
+// UMD (Universal Module Definition)
+(function (root, factory)
 {
+  if (typeof define === 'function' && define.amd) // jshint ignore:line
+  {
+    // AMD. Register as an anonymous module.
+    define(['Rekord', 'PubSub'], function(Rekord, PubSub) { // jshint ignore:line
+      return factory(root, Rekord, PubSub);
+    });
+  }
+  else if (typeof module === 'object' && module.exports)  // jshint ignore:line
+  {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory(global, require('Rekord'), require('PubSub'));  // jshint ignore:line
+  }
+  else
+  {
+    // Browser globals (root is window)
+    root.Rekord = factory(root, root.Rekord, root.PubSub);
+  }
+}(this, function(global, Rekord, PubSub, undefined)
+{
+
   var OP_SAVE = 1;
   var OP_REMOVE = 2;
 
@@ -77,4 +100,6 @@
 
   Rekord.setLive( LiveFactory, true );
 
-})( this, this.Rekord, this.PubSub );
+  return Rekord;
+
+}));
