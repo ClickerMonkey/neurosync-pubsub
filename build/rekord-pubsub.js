@@ -1,11 +1,11 @@
-/* rekord-pubsub 1.4.2 - A rekord binding to pubsub - implementing Rekord.live by Philip Diffenderfer */
+/* rekord-pubsub 1.4.3 - A rekord binding to pubsub - implementing Rekord.live by Philip Diffenderfer */
 // UMD (Universal Module Definition)
 (function (root, factory)
 {
   if (typeof define === 'function' && define.amd) // jshint ignore:line
   {
     // AMD. Register as an anonymous module.
-    define(['Rekord', 'PubSub'], function(Rekord, PubSub) { // jshint ignore:line
+    define(['rekord', 'clickermonkey-pubsubjs'], function(Rekord, PubSub) { // jshint ignore:line
       return factory(root, Rekord, PubSub);
     });
   }
@@ -14,7 +14,7 @@
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
-    module.exports = factory(global, require('Rekord'), require('PubSub'));  // jshint ignore:line
+    module.exports = factory(global, require('rekord'), require('clickermonkey-pubsubjs'));  // jshint ignore:line
   }
   else
   {
