@@ -1,4 +1,4 @@
-/* rekord-pubsub 1.5.0 - A rekord binding to pubsub - implementing Rekord.live by Philip Diffenderfer */
+/* rekord-pubsub 1.5.6 - A rekord binding to pubsub - implementing Rekord.live by Philip Diffenderfer */
 // UMD (Universal Module Definition)
 (function (root, factory)
 {
@@ -99,6 +99,7 @@
     };
   }
 
+  Rekord.Lives.Pubsub = LiveFactory;
   Rekord.setLive( LiveFactory, true );
 
   return Rekord;

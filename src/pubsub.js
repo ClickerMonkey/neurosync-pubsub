@@ -98,6 +98,7 @@
     };
   }
 
+  Rekord.Lives.Pubsub = LiveFactory;
   Rekord.setLive( LiveFactory, true );
 
   return Rekord;
